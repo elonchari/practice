@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Website</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff; /* White background */
+      color: #000000; /* Black text */
+    }
+
+    nav {
+      background-color: #000000; /* Black */
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff; /* White text */
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: #cccccc; /* Light gray for hover effect */
+    }
+
+    .page {
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #000000; /* Black */
+    }
+
+    section p {
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #000000; /* Black */
+      color: #ffffff; /* White text */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home" onclick="showPage('home')">Home</a></li>
+      <li><a href="#about" onclick="showPage('about')">About</a></li>
+      <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="home" class="page">
+    <header>
+      <h1>Welcome to My Website</h1>
+    </header>
+    <section>
+      <p>This is the home page of a simple 3-page website. Use the navigation menu to explore more.</p>
+    </section>
+  </div>
+
+  <div id="about" class="page" style="display:none;">
+    <header>
+      <h1>About Us</h1>
+    </header>
+    <section>
+      <p>This page provides information about our website. It is created using HTML, CSS, and JavaScript.</p>
+    </section>
+  </div>
+
+  <div id="contact" class="page" style="display:none;">
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+    <section>
+      <p>Get in touch with us through this contact page. We'd love to hear from you!</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Simple Website</p>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
